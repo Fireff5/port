@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1761f53f.css",
+    "main.js": "/static/js/main.b5d35307.js",
+    "static/media/profile.jpg": "/static/media/profile.21d562a5f073ca94e816.jpg",
+    "static/media/fullstack-cert.jpg": "/static/media/fullstack-cert.ed276999baa8c141efae.jpg",
+    "static/media/ethical-hacking-cert.jpg": "/static/media/ethical-hacking-cert.957f30f42c36c0788b64.jpg",
+    "static/media/cybersecurity-cert.jpg": "/static/media/cybersecurity-cert.1997d34e230a38a09403.jpg",
+    "index.html": "/index.html",
+    "main.1761f53f.css.map": "/static/css/main.1761f53f.css.map",
+    "main.b5d35307.js.map": "/static/js/main.b5d35307.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1761f53f.css",
+    "static/js/main.b5d35307.js"
+  ]
+}

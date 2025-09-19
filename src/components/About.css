@@ -1,0 +1,97 @@
+/* About.css */
+
+#about {
+  padding: 6rem 2rem 4rem 2rem;
+  min-height: 50vh;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 16px;
+}
+
+/* Light Mode */
+#about {
+  background: #f9fafb;
+  color: #1a202c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Mode */
+.dark #about {
+  background: #111827;
+  color: #f9fafb;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Heading */
+#about h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+#about h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.dark #about h3::after {
+  background: #60a5fa;
+}
+
+/* Paragraph */
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  opacity: 0.9;
+}
+
+/* Social Icons Container */
+#about .social-icon {
+  font-size: 2rem;
+  margin: 0 0.8rem;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #3b82f6; /* default blue */
+}
+
+/* Hover Effects */
+#about .social-icon:hover {
+  transform: scale(1.2);
+  color: #8b5cf6; /* purple on hover */
+}
+
+/* Dark Mode */
+.dark #about .social-icon {
+  color: #60a5fa;
+}
+
+.dark #about .social-icon:hover {
+  color: #c084fc;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #about {
+    padding: 4rem 1.5rem;
+  }
+
+  #about h3 {
+    font-size: 1.75rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+}

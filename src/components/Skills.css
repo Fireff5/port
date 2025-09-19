@@ -1,0 +1,83 @@
+/* Skills section container */
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center everything */
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Skill item container */
+.skill-item {
+  width: 100%;
+  max-width: 600px;   /* all progress bars same width */
+  margin: 20px auto;  /* center + spacing */
+  padding: 15px 20px;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for cards */
+.skill-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Skill name + percentage text */
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0bbbeb;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .skill-header {
+  color: #dbeafe;
+}
+
+/* Progress bar background */
+.skill-bar {
+  width: 100%;
+  height: 14px;
+  background: rgba(59, 130, 246, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Progress bar fill */
+.skill-progress {
+  height: 100%;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  width: 0; /* will be set dynamically */
+  transition: width 1.2s ease-in-out;
+}
+
+/* Dark mode */
+body.dark-mode .skill-bar {
+  background: rgba(37, 99, 235, 0.3);
+}
+body.dark-mode .skill-progress {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+}
+
+/* Section Heading */
+#skills h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff4b2b, #ff4b2b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.4s ease;
+}

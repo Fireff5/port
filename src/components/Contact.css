@@ -1,0 +1,140 @@
+/* Section wrapper */
+#contact {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+}
+
+/* Light mode */
+#contact {
+  background: #ffffff;
+  color: #1f2937; /* gray-800 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode */
+.dark #contact {
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  color: #f1f5f9; /* gray-100 */
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Heading */
+#contact h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+#contact h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.6rem auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+#contact h3:hover::after {
+  width: 100px;
+}
+
+/* Form */
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Inputs & Textarea */
+#contact input,
+#contact textarea {
+  padding: 0.9rem 1rem;
+  border-radius: 0.6rem;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  resize: none;
+}
+
+/* Light Mode Fields */
+#contact input,
+#contact textarea {
+  background: #f9fafb; /* light gray */
+  color: #111827;
+  border-color: #e5e7eb;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Dark Mode Fields */
+.dark #contact input,
+.dark #contact textarea {
+  background: #1f2937;
+  color: #f9fafb;
+  border-color: #374151;
+}
+
+.dark #contact input:focus,
+.dark #contact textarea:focus {
+  border-color: #60a5fa;
+  background: #111827;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
+}
+
+/* Submit Button */
+#contact button {
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#contact button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+}
+
+/* Result Message */
+#contact span {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #16a34a; /* green-600 */
+}
+
+.dark #contact span {
+  color: #22c55e; /* green-500 */
+}
+
+/* Responsive */
+@media (max-width: 582px) {
+  #contact {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+
+  #contact h3 {
+    font-size: 1.6rem;
+  }
+}

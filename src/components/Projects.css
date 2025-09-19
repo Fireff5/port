@@ -1,0 +1,91 @@
+/* Projects.css */
+
+#projects {
+  min-height: 100vh;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Heading */
+#projects h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.4s ease;
+}
+
+/* Dark mode heading */
+body.dark-mode #projects h3 {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Project list */
+#projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+/* Project cards */
+#projects li {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark mode cards */
+body.dark-mode #projects li {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover effect */
+#projects li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Card heading */
+#projects h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111;
+  transition: color 0.4s ease;
+}
+
+/* Dark mode heading */
+body.dark-mode #projects h4 {
+  color: #f1f1f1;
+}
+
+/* Card paragraph */
+#projects p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  transition: color 0.4s ease;
+}
+
+/* Dark mode paragraph */
+body.dark-mode #projects p {
+  color: #ddd;
+}
+
