@@ -84,16 +84,54 @@ html, body {
 
 /* Footer */
 footer {
-  padding: 1rem;
-  background: #edf2f7;
+  padding: 0.2rem;
+  background: linear-gradient(90deg, #f3f4f6, #e5e7eb); /* light mode gradient */
+  color: #111;
   text-align: center;
-  font-size: 0.9rem;
+  border-top: 2px solid #d1d5db;
+  position: relative;
 }
 
 .dark footer {
-  background: #2d3748;
-  color: #f7fafc;
+  background: linear-gradient(90deg, #1f2937, #111827); /* dark mode gradient */
+  color: #f9fafb;
+  border-top: 2px solid #374151;
 }
+
+footer p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+footer .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.6rem;
+  font-size: 1.6rem;
+  color: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effects */
+footer .social-icon:hover {
+  transform: scale(1.2) rotate(8deg);
+  color: #3b82f6; /* Tailwind blue for hover */
+}
+
+/* Specific branding colors (optional) */
+footer .social-icon:nth-child(2):hover {
+  color: #333; /* GitHub */
+}
+footer .social-icon:nth-child(3):hover {
+  color: #0a66c2; /* LinkedIn */
+}
+footer .social-icon:nth-child(4):hover {
+  color: #980968; /* Instagram */
+}
+
 
 /* Responsive Fix */
 @media (max-width: 768px) {

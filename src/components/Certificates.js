@@ -16,6 +16,9 @@ const Certificates = () => {
             alt="FullStack - Digisailor"
             className="w-64 h-auto rounded shadow"
           />
+          <a className="view-btn" href={fullstackCert} target="_blank" rel="noopener noreferrer">
+             View 
+          </a>
         </li>
         <li>
             <p className="mt-2">
@@ -26,6 +29,9 @@ const Certificates = () => {
             alt="Cyber Security - Postulate Infotech Pvt Ltd"
             className="w-64 h-auto rounded shadow"
           />
+          <a className="view-btn" href={cyberCert} target="_blank" rel="noopener noreferrer">
+             View
+          </a>
         </li>
         <li>
              <p className="mt-2">
@@ -36,6 +42,9 @@ const Certificates = () => {
               alt="Cyber Security and Ethical Hacking - Udemy"
               className="w-64 h-auto rounded shadow"
           />
+          <a className="view-btn" href={ethicalHackingCert} target="_blank" rel="noopener noreferrer">
+             View
+          </a>
         </li>
       </ul>
     </section>

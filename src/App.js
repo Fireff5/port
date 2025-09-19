@@ -7,6 +7,10 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Certificates from './components/Certificates';
 import './App.css';
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem('theme') === 'light';
@@ -36,8 +40,35 @@ const App = () => {
       <Skills  className='skills'/>
       <Certificates  className='certicates'/>
       <Contact  className='contact'/>
+      
       <footer className="p-4 bg-gray-200 dark:bg-gray-800 text-black dark:text-white text-center">
         <p>&copy; 2023 Mohamed Rilwan. All rights reserved.</p>
+        <a
+                href="https://github.com/Fireff5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+              >
+                <FaGithub />
+              </a>
+        
+              <a
+                href="https://www.linkedin.com/in/mohamed-rilwan-386698291/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+              >
+                <FaLinkedin />
+              </a>
+        
+              <a
+                href="https://www.instagram.com/rilwan_uzumaki_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+              >
+              <FaInstagramSquare />
+              </a>
       </footer>    
     </div>
   );
