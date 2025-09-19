@@ -25,9 +25,7 @@ const App = () => {
   console.log(isDarkMode)
 
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
-  const form=(e)=>{
-    e.preventDefault();
-  }
+  
 
   return (
     <div className="font-sans" style={ {backgroundColor:isDarkMode ? '#1a202c': '#f7fafc',color:isDarkMode ? '#f7fafc': '#1a202c'} }>
@@ -37,7 +35,7 @@ const App = () => {
       <Projects  className='projects'/>
       <Skills  className='skills'/>
       <Certificates  className='certicates'/>
-      <Contact form={form} className='contact'/>
+      <Contact  className='contact'/>
       <footer className="p-4 bg-gray-200 dark:bg-gray-800 text-black dark:text-white text-center">
         <p>&copy; 2023 Mohamed Rilwan. All rights reserved.</p>
       </footer>    

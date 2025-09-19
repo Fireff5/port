@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
+
 import './Contact.css';
 
 const Contact = () => {
-  const [result, setResult] = React.useState("");
+  const [result, setResult] =useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
