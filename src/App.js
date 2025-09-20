@@ -42,7 +42,7 @@ const App = () => {
       <Contact  className='contact'/>
       
       <footer className="p-4 bg-gray-200 dark:bg-gray-800 text-black dark:text-white text-center">
-        <p>&copy; 2023 Mohamed Rilwan. All rights reserved.</p>
+        <p>&copy; 2025 Mohamed Rilwan. All rights reserved.</p>
         <a
                 href="https://github.com/Fireff5"
                 target="_blank"

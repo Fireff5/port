@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="hero-text">
           <h2>Hi, I'm <span>Mohamed Rilwan</span></h2>
           <h3>B.TECH-IT, Final Year Student</h3>
-          <p>Frontend Developer | Cyber Security Learner | Tech Enthusiast</p>
+          <p>Web Developer | Cyber Security Learner | Tech Enthusiast</p>
           <a href="#contact" className="hero-btn">Get in Touch</a>
           <a 
            href="/Resume.pdf" 
