@@ -54,6 +54,36 @@ const Projects = () => {
             </a>
           </div>
         </li>
+
+        <li className="border p-4 rounded shadow dark:border-gray-600">
+          <h4 className="font-bold">E-commerce Website</h4>
+          <p>
+            Developed a full-stack e-commerce website using React for the front-end
+            and Node.js with Express for the back-end. Implemented user
+            authentication, product listings, shopping cart functionality, and
+            payment processing using Stripe API. Ensured responsive design and
+            optimized performance for a seamless user experience across devices.
+          </p>
+          <br />
+          <div className="btn-group">
+             <a
+              href="https://ecommerce-mobileshop.netlify.app/"
+              target='_blank'
+              rel="noopener noreferrer"
+              className="view-btn"
+            >
+              View Project
+            </a>
+            <a
+              href="https://github.com/Fireff5/MobileShop"
+              target='_blank'
+              rel="noopener noreferrer"
+              className="view-btn"
+            >
+              View Code
+            </a>
+          </div>
+        </li>
       </ul>
     </section>
   );
