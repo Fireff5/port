@@ -21,14 +21,6 @@ const Projects = () => {
           <br />
           <div className="btn-group">
             <a
-              href="https://rilwan-portfolio.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="view-btn"
-            >
-              Live Demo
-            </a>
-            <a
               href="https://github.com/Fireff5/port"
               target="_blank"
               rel="noopener noreferrer"
