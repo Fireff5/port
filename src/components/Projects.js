@@ -72,7 +72,7 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="view-btn"
             >
-              View Project
+              Live Demo
             </a>
             <a
               href="https://github.com/Fireff5/MobileShop"
