@@ -17,7 +17,7 @@ const Hero = () => {
           <p>Web Developer | Cyber Security Learner | Tech Enthusiast</p>
           <a href="#contact" className="hero-btn">Get in Touch</a>
           <a 
-           href="/Resume.pdf" 
+           href="/Resume.png" 
            target="_blank" 
            rel="noopener noreferrer"
            className="hero-btn"
