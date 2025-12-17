@@ -2,6 +2,8 @@ import React from "react";
 import fullstackCert from "../assets/fullstack-cert.jpg";
 import cyberCert from "../assets/cybersecurity-cert.jpg";
 import ethicalHackingCert from "../assets/ethical-hacking-cert.jpg";
+import cssWebdesignCert from "../assets/csswebdesign-cert.jpg";
+import microsoft365Cert from "../assets/microsoft365-cert.jpg";
 import './Certificates.css';
 
 const Certificates = () => {
@@ -20,6 +22,7 @@ const Certificates = () => {
              View 
           </a>
         </li>
+
         <li>
             <p className="mt-2">
             Cyber Security - Postulate Infotech Pvt Ltd
@@ -33,6 +36,7 @@ const Certificates = () => {
              View
           </a>
         </li>
+
         <li>
              <p className="mt-2">
             Cyber Security and Ethical Hacking Online Course - Udemy
@@ -43,6 +47,34 @@ const Certificates = () => {
               className="w-64 h-auto rounded shadow"
           />
           <a className="view-btn" href={ethicalHackingCert} target="_blank" rel="noopener noreferrer">
+             View
+          </a>
+        </li>
+
+        <li>
+             <p className="mt-2">
+            CSS WebDesign Course - Udemy
+             </p>
+              <img
+              src={cssWebdesignCert}
+              alt="CSS WebDesign Course - Udemy"
+              className="w-64 h-auto rounded shadow"
+          />
+          <a className="view-btn" href={cssWebdesignCert} target="_blank" rel="noopener noreferrer">
+             View
+          </a>
+        </li>
+
+        <li>
+             <p className="mt-2">
+            Microsoft365 certificate- excel, word, powerpoint - Udemy
+             </p>
+              <img
+              src={microsoft365Cert}
+              alt="Microsoft365 certificate- excel, word, powerpoint - Udemy"
+              className="w-64 h-auto rounded shadow"
+          />
+          <a className="view-btn" href={microsoft365Cert} target="_blank" rel="noopener noreferrer">
              View
           </a>
         </li>
