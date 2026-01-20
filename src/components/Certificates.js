@@ -4,6 +4,7 @@ import cyberCert from "../assets/cybersecurity-cert.jpg";
 import ethicalHackingCert from "../assets/ethical-hacking-cert.jpg";
 import cssWebdesignCert from "../assets/csswebdesign-cert.jpg";
 import microsoft365Cert from "../assets/microsoft365-cert.jpg";
+import JavaBootcampCert from "../assets/Java-bootcamp-cert.jpg";
 import './Certificates.css';
 
 const Certificates = () => {
@@ -67,7 +68,7 @@ const Certificates = () => {
 
         <li>
              <p className="mt-2">
-            Microsoft365 certificate- excel, word, powerpoint - Udemy
+            Microsoft365 Certificate- excel, word, powerpoint - Udemy
              </p>
               <img
               src={microsoft365Cert}
@@ -78,6 +79,19 @@ const Certificates = () => {
              View
           </a>
         </li>
+
+        <li>
+            <p className="mt-2">Java Bootcamp Certificate- Udemy</p>
+            <img
+            src={JavaBootcampCert}
+            alt="Java Bootcamp Certificate- Udemy"
+            className="w-64 h-auto rounded shadow"
+          />
+          <a className="view-btn" href={JavaBootcampCert} target="_blank" rel="noopener noreferrer">
+             View
+          </a>
+        </li>
+
       </ul>
     </section>
   );
