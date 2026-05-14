@@ -6,70 +6,63 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Certificates from './components/Certificates';
+import './index.css';
 import './App.css';
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagramSquare } from 'react-icons/fa';
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'light';
-  });
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const html = document.documentElement;
-    if (isDarkMode) {
-      html.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      html.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDarkMode]);
-  console.log(isDarkMode)
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
-  
+  // Intersection Observer for scroll reveal
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="font-sans" style={ {backgroundColor:isDarkMode ? '#1a202c': '#f7fafc',color:isDarkMode ? '#f7fafc': '#1a202c'} }>
-      <Navbar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} className='navbar'/>
-     <Hero  className='hero'/>
-      <About className='about' />
-      <Projects  className='projects'/>
-      <Skills  className='skills'/>
-      <Certificates  className='certicates'/>
-      <Contact  className='contact'/>
-      
-      <footer className="p-4 bg-gray-200 dark:bg-gray-800 text-black dark:text-white text-center">
-        <p>&copy; 2025 Mohamed Rilwan. All rights reserved.</p>
-        <a
-                href="https://github.com/Fireff5"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-              >
-                <FaGithub />
-              </a>
-        
-              <a
-                href="https://www.linkedin.com/in/mohamed-rilwan-386698291/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-              >
-                <FaLinkedin />
-              </a>
-        
-              <a
-                href="https://www.instagram.com/rilwan_uzumaki_/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-              >
+    <div className="app-wrapper">
+      <Navbar scrolled={scrolled} />
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Certificates />
+      <Contact />
+
+      <footer className="footer">
+        <div className="footer-inner">
+          <div className="footer-social">
+            <a href="https://github.com/Fireff5" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FaGithub />
+            </a>
+            <a href="https://www.linkedin.com/in/mohamed-rilwan-386698291/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="https://www.instagram.com/rilwan_uzumaki_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagramSquare />
-              </a>
-      </footer>    
+            </a>
+          </div>
+          <p className="footer-text">
+            © 2025 <span>Mohamed Rilwan</span> · Built with passion & React
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -1,92 +1,70 @@
 import React from 'react';
 import './Projects.css';
 
-const Projects = () => {
-  return (
-    <section
-      id="projects"
-      className="p-8 bg-gray-50 dark:bg-gray-900 text-black dark:text-white"
-    >
-      <h3 className="text-2xl font-semibold mb-4">Projects</h3>
-      <ul className="space-y-4">
-        <li className="border p-4 rounded shadow dark:border-gray-600">
-          <h4 className="font-bold">Portfolio website</h4>
-          <p>
-            Responsive design for all devices. Simple and modern user interface.
-            About Me section with career details. Skills section with categorized
-            tech stack. Contact form for communication. Fast loading and SEO
-            friendly. Smooth animations for better experience. Hosted online with
-            a custom domain.
-          </p>
-          <br />
-          <div className="btn-group">
-            <a
-              href="https://github.com/Fireff5/port"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="view-btn"
-            >
-              View Code
-            </a>
-          </div>
-        </li>
+const projects = [
+  {
+    num: '01',
+    type: 'Frontend',
+    title: 'Portfolio Website',
+    desc: 'Responsive personal portfolio with smooth animations, dark glassmorphism design, animated hero, and a live contact form using Web3Forms.',
+    tags: ['React', 'CSS3', 'Web3Forms'],
+    demo: null,
+    code: 'https://github.com/Fireff5/port',
+  },
+  {
+    num: '02',
+    type: 'Security',
+    title: 'Secure Socket Communication',
+    desc: 'Client-server network app with SSL/TLS encryption for safe real-time data transfer over TCP/IP sockets with multi-client support.',
+    tags: ['Python', 'SSL/TLS', 'TCP/IP', 'Sockets'],
+    demo: null,
+    code: 'https://github.com/Fireff5/Secure-Communication',
+  },
+  {
+    num: '03',
+    type: 'Full-Stack',
+    title: 'E-Commerce Mobile Shop',
+    desc: 'Full-stack e-commerce platform with user authentication, product listings, shopping cart, and Stripe payment integration.',
+    tags: ['React', 'Node.js', 'Express', 'Stripe'],
+    demo: 'https://ecommerce-mobileshop.netlify.app/',
+    code: 'https://github.com/Fireff5/MobileShop',
+  },
+];
 
-        <li className="border p-4 rounded shadow dark:border-gray-600">
-          <h4 className="font-bold">
-            Secure Client-Server Socket Communication
-          </h4>
-          <p>
-            Secure Client–Server Socket Communication – A network application that
-            allows safe data transfer between a client and server using TCP/IP
-            sockets. The project uses SSL/TLS encryption to protect messages,
-            supports multiple clients, and ensures reliable, real-time
-            communication.
-          </p>
-          <br />
-          <div className="btn-group">
-            <a
-              href="https://github.com/Fireff5/Secure-Communication"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="view-btn"
-            >
-              View Code
-            </a>
-          </div>
-        </li>
+const Projects = () => (
+  <section id="projects" className="projects-section">
+    <div className="projects-inner">
+      <h2 className="section-heading">Projects</h2>
+      <div className="section-divider" />
+      <p className="section-subtitle">Things I've built that I'm proud of</p>
 
-        <li className="border p-4 rounded shadow dark:border-gray-600">
-          <h4 className="font-bold">E-commerce Website</h4>
-          <p>
-            Developed a full-stack e-commerce website using React for the front-end
-            and Node.js with Express for the back-end. Implemented user
-            authentication, product listings, shopping cart functionality, and
-            payment processing using Stripe API. Ensured responsive design and
-            optimized performance for a seamless user experience across devices.
-          </p>
-          <br />
-          <div className="btn-group">
-             <a
-              href="https://ecommerce-mobileshop.netlify.app/"
-              target='_blank'
-              rel="noopener noreferrer"
-              className="view-btn"
-            >
-              Live Demo
-            </a>
-            <a
-              href="https://github.com/Fireff5/MobileShop"
-              target='_blank'
-              rel="noopener noreferrer"
-              className="view-btn"
-            >
-              View Code
-            </a>
+      <div className="projects-grid">
+        {projects.map((p) => (
+          <div className="project-card" key={p.num}>
+            <span className="project-number">{p.num}</span>
+            <span className="project-type">{p.type}</span>
+            <h3 className="project-title">{p.title}</h3>
+            <p className="project-desc">{p.desc}</p>
+            <div className="project-tags">
+              {p.tags.map((t) => (
+                <span className="project-tag" key={t}>{t}</span>
+              ))}
+            </div>
+            <div className="project-actions">
+              {p.demo && (
+                <a href={p.demo} target="_blank" rel="noopener noreferrer" className="project-btn project-btn-primary">
+                  Live Demo ↗
+                </a>
+              )}
+              <a href={p.code} target="_blank" rel="noopener noreferrer" className="project-btn project-btn-secondary">
+                View Code
+              </a>
+            </div>
           </div>
-        </li>
-      </ul>
-    </section>
-  );
-};
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default Projects;

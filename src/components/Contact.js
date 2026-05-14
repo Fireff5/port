@@ -1,51 +1,110 @@
-import React from "react";
-import { useState } from "react";
-
+import React, { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
-  const [result, setResult] =useState("");
+  const [result, setResult] = useState('');
+  const [status, setStatus] = useState(''); // 'sending' | 'success' | 'error'
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setResult('Sending your message…');
+    setStatus('sending');
 
-    formData.append("access_key", "fc886c00-4495-40ee-8aab-4ef54e62715a");
+    const formData = new FormData(e.target);
+    formData.append('access_key', 'fc886c00-4495-40ee-8aab-4ef54e62715a');
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
 
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("message send Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
+      if (data.success) {
+        setResult('✓ Message sent successfully! I\'ll reply soon.');
+        setStatus('success');
+        e.target.reset();
+      } else {
+        setResult('⚠ Something went wrong. Please try again.');
+        setStatus('error');
+      }
+    } catch {
+      setResult('⚠ Network error. Please try again later.');
+      setStatus('error');
     }
   };
 
   return (
-    <section id="contact" className="Contact section id">
-    <div>
-      <h3 className=" Contact form">Contact Me</h3>
-      <form onSubmit={onSubmit}>
-        <input type="text" name="name" placeholder="Your name" required/>
-        <input type="email" name="email" placeholder="Email Address" required/>
-        <textarea name="message" placeholder="Type message" required></textarea>
-        <button type="submit">Send</button>
+    <section id="contact" className="contact-section">
+      <div className="contact-inner">
+        <h2 className="section-heading">Get In Touch</h2>
+        <div className="section-divider" />
+        <p className="section-subtitle">Have a project in mind? Let's talk.</p>
 
-      </form>
-      <span>{result}</span>
+        <div className="contact-layout">
+          {/* Info side */}
+          <div className="contact-info">
+            <p>
+              I'm always open to new opportunities, collaborations, or just a
+              friendly chat about tech, web dev, or cyber security.
+            </p>
 
-    </div>
+            <div className="contact-detail">
+              <span className="contact-detail-icon">📍</span>
+              <div className="contact-detail-text">
+                <p className="contact-detail-label">Location</p>
+                <p className="contact-detail-value">India</p>
+              </div>
+            </div>
+
+            <div className="contact-detail">
+              <span className="contact-detail-icon">🎓</span>
+              <div className="contact-detail-text">
+                <p className="contact-detail-label">Status</p>
+                <p className="contact-detail-value">Final Year · Open to Internships</p>
+              </div>
+            </div>
+
+            <div className="contact-detail">
+              <span className="contact-detail-icon">⚡</span>
+              <div className="contact-detail-text">
+                <p className="contact-detail-label">Response Time</p>
+                <p className="contact-detail-value">Usually within 24 hours</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Form side */}
+          <div className="contact-form-wrap">
+            <form className="contact-form" onSubmit={onSubmit}>
+              <div className="form-group">
+                <label className="form-label">Your Name</label>
+                <input className="form-input" type="text" name="name" placeholder="John Doe" required />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Email Address</label>
+                <input className="form-input" type="email" name="email" placeholder="john@example.com" required />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Message</label>
+                <textarea className="form-textarea" name="message" placeholder="Tell me about your project…" required />
+              </div>
+
+              <button type="submit" className="form-submit">
+                Send Message →
+              </button>
+
+              {result && (
+                <div className={`form-result ${status}`}>{result}</div>
+              )}
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
   );
-}
-
+};
 
 export default Contact;
