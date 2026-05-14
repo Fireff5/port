@@ -6,7 +6,7 @@ const infoCards = [
   { icon: '🎓', title: 'Education', text: 'B.Tech IT — Final Year' },
   { icon: '🔒', title: 'Cyber Security', text: 'Ethical hacking & network security' },
   { icon: '💻', title: 'Web Dev', text: 'React, Node.js, full-stack' },
-  { icon: '📍', title: 'Location', text: 'India · Open to Remote' },
+  { icon: '📍', title: 'Location', text: 'Tamil Nadu, India · Open to Remote' },
 ];
 
 const About = () => (

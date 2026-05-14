@@ -29,6 +29,15 @@ const projects = [
     demo: 'https://ecommerce-mobileshop.netlify.app/',
     code: 'https://github.com/Fireff5/MobileShop',
   },
+  {
+    num: '04',
+    type: 'Full-Stack',
+    title: 'College Event Management System',
+    desc: 'Full-stack application for managing college events, including user authentication, event listings, and registration functionality, Certificate Generation, and Admin Dashboard.',
+    tags: ['React + TypeScript', 'Node.js', 'Express', 'PostgreSQL'],
+    demo: null,
+    code: 'https://github.com/Fireff5/College-Event-Management',
+  },
 ];
 
 const Projects = () => (
