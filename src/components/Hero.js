@@ -61,8 +61,9 @@ const Hero = () => {
           </p>
 
           <p className="hero-desc">
-            B.Tech IT Final Year Student passionate about building secure, scalable
-            web applications and diving deep into the world of cyber security.
+            B.Tech IT Graduate | Full-Stack Web Developer Passionate about building modern, responsive, 
+            and scalable web applications with clean code and exceptional user experiences. 
+            Always eager to learn new technologies and solve real-world problems through software development.
           </p>
 
           <div className="hero-btns">

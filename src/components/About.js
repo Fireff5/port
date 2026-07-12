@@ -21,8 +21,9 @@ const About = () => (
           <p>
             Hey! I'm <strong>Mohamed Rilwan</strong>, a passionate{' '}
             <span className="about-highlight">Full-Stack Web Developer</span> and{' '}
-            <span className="about-highlight">Cyber Security Learner</span> in the final
-            year of my B.Tech IT degree.
+            <span className="about-highlight">Cyber Security Learner.</span>I recently 
+            completed my B.Tech in Information Technology and am eager to build secure, 
+            scalable, and user-friendly web applications.
           </p>
           <p>
             I love crafting beautiful, performant web applications and exploring the
