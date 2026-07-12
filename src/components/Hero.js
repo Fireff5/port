@@ -71,7 +71,7 @@ const Hero = () => {
               Get in Touch ✦
             </a>
             <a
-              href="/Resume.png"
+              href="/my resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
