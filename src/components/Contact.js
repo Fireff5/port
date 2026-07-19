@@ -61,7 +61,7 @@ const Contact = () => {
               <span className="contact-detail-icon">🎓</span>
               <div className="contact-detail-text">
                 <p className="contact-detail-label">Status</p>
-                <p className="contact-detail-value">Final Year · Open to Internships</p>
+                <p className="contact-detail-value">Final Year Graduate · Open to Work</p>
               </div>
             </div>
 
@@ -79,17 +79,17 @@ const Contact = () => {
             <form className="contact-form" onSubmit={onSubmit}>
               <div className="form-group">
                 <label className="form-label">Your Name</label>
-                <input className="form-input" type="text" name="name" placeholder="John Doe" required />
+                <input className="form-input" type="text" name="name" placeholder="Enter Your Name" required />
               </div>
 
               <div className="form-group">
                 <label className="form-label">Email Address</label>
-                <input className="form-input" type="email" name="email" placeholder="john@example.com" required />
+                <input className="form-input" type="email" name="email" placeholder="Enter Your Email" required />
               </div>
 
               <div className="form-group">
                 <label className="form-label">Message</label>
-                <textarea className="form-textarea" name="message" placeholder="Tell me about your project…" required />
+                <textarea className="form-textarea" name="message" placeholder="Share your requirements, opportunity, or any questions..." required />
               </div>
 
               <button type="submit" className="form-submit">
