@@ -16,6 +16,8 @@ const Navbar = ({ scrolled }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const observerRef = useRef(null);
+  const menuButtonRef = useRef(null);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const sectionIds = navLinks.map(l => l.href.slice(1));
@@ -36,7 +38,13 @@ const Navbar = ({ scrolled }) => {
     return () => observerRef.current?.disconnect();
   }, []);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+  if (menuRef.current?.contains(document.activeElement)) {
+    menuButtonRef.current?.focus();
+  }
+
+  setMenuOpen(false);
+};
 
   const handleNavClick = (href) => {
     closeMenu();
@@ -84,10 +92,18 @@ const Navbar = ({ scrolled }) => {
             Hire Me
           </a>
           <button
+            ref={menuButtonRef}
             className={`menu-btn ${menuOpen ? 'open' : ''}`}
-            onClick={() => setMenuOpen(!menuOpen)}
+            onClick={() => {
+              if (menuOpen) {
+                closeMenu();
+              } else {
+                setMenuOpen(true);
+              }
+            }}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -95,7 +111,13 @@ const Navbar = ({ scrolled }) => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`} aria-hidden={!menuOpen}>
+      <div
+        id="mobile-menu"
+        ref={menuRef}
+        className={`mobile-menu ${menuOpen ? 'open' : ''}`}
+        aria-hidden={!menuOpen}
+        inert={!menuOpen}
+      >
         <div className="mobile-menu-inner">
           {navLinks.map(({ href, label }) => (
             <a
