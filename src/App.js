@@ -22,17 +22,35 @@ const App = () => {
 
   // Intersection Observer for scroll reveal
   useEffect(() => {
+    const revealElements = document.querySelectorAll(
+      '.reveal, .reveal-left, .reveal-right'
+    );
+
+    // Mobile devices: keep content visible
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      revealElements.forEach((el) => {
+        el.classList.add('visible');
+      });
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px 50px 0px',
+      }
     );
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    revealElements.forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
 

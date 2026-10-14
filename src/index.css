@@ -288,3 +288,14 @@ section {
     transform: none !important;
   }
 }
+
+/* Fix scroll reveal content on mobile devices */
+@media (max-width: 900px) {
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
