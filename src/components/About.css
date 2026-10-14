@@ -347,3 +347,23 @@
     padding: 0.5rem 0.65rem;
   }
 }
+
+
+/* Mobile About visibility diagnostic fix */
+@media (max-width: 900px) {
+  .about-section .about-inner,
+  .about-section .about-header,
+  .about-section .about-grid,
+  .about-section .about-left,
+  .about-section .about-right,
+  .about-section .about-bio,
+  .about-section .about-bio p,
+  .about-section .about-socials,
+  .about-section .about-cards,
+  .about-section .about-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
