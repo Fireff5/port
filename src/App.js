@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Certificates from './components/Certificates';
+import Experience from './components/Experience';
 import './index.css';
 import './App.css';
 import { FaGithub, FaLinkedin, FaInstagramSquare } from 'react-icons/fa';
@@ -42,6 +43,7 @@ const App = () => {
       <About />
       <Projects />
       <Skills />
+      <Experience />
       <Certificates />
       <Contact />
 
