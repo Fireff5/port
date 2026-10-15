@@ -6,6 +6,7 @@ import ethicalHackingCert from '../assets/ethical-hacking-cert.jpg';
 import cssWebdesignCert from '../assets/csswebdesign-cert.jpg';
 import microsoft365Cert from '../assets/microsoft365-cert.jpg';
 import JavaBootcampCert from '../assets/Java-bootcamp-cert.jpg';
+import fundamentalsAICert from '../assets/fundamentalsAI-cert.jpg';
 
 const certs = [
   { img: fullstackCert, issuer: 'Digisailor', title: 'FullStack Development', icon: '🚀' },
@@ -14,6 +15,7 @@ const certs = [
   { img: cssWebdesignCert, issuer: 'Udemy', title: 'CSS Web Design', icon: '🎨' },
   { img: microsoft365Cert, issuer: 'Udemy', title: 'Microsoft 365 (Excel, Word, PPT)', icon: '📊' },
   { img: JavaBootcampCert, issuer: 'Udemy', title: 'Java Bootcamp', icon: '☕' },
+  { img: fundamentalsAICert, issuer: 'IBM', title: 'Fundamentals of AI', icon: '🤖' },
 ];
 
 const Certificates = () => (

@@ -89,7 +89,7 @@ const Hero = () => {
               <FaArrowRight />
               View My Work
             </a>
-            <a href="/my resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">
+            <a href="/MyResume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">
               <FaDownload />
               Resume
             </a>
